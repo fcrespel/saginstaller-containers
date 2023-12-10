@@ -1,0 +1,125 @@
+services:
+  # Base image
+  base:
+    image: ${REG}/base:${TAG}
+    build:
+      context: base/
+      args:
+        - OS_IMAGE
+
+  # Software AG Installer
+  installer:
+    image: ${REG}/installer:${TAG}
+    build:
+      context: installer/
+      args:
+        - OS_IMAGE
+        - SAG_INSTALLER_URL
+
+  # Java image
+  java:
+    image: ${REG}/java:${TAG}
+    build:
+      context: java/
+      args:
+        - BASE_IMAGE=${REG}/base:${TAG}
+        - BUILDER_IMAGE=${REG}/installer:${TAG}
+        - ADMIN_PASSWORD
+        - EMPOWER_USERNAME
+        - EMPOWER_PASSWORD
+        - RELEASE
+        - PRODUCTS=sjp
+        - FIXES
+    depends_on:
+      - base
+      - installer
+
+  # Asset Build Environment
+  abe:
+    image: ${REG}/abe:${TAG}
+    build:
+      context: abe/
+      args:
+        - BASE_IMAGE=${REG}/java:${TAG}
+        - BUILDER_IMAGE=${REG}/installer:${TAG}
+        - ADMIN_PASSWORD
+        - EMPOWER_USERNAME
+        - EMPOWER_PASSWORD
+        - RELEASE
+        - PRODUCTS=acdl
+        - FIXES
+    depends_on:
+      - java
+      - installer
+
+  # Broker Server
+  broker:
+    image: ${REG}/broker:${TAG}
+    build:
+      context: broker/
+      args:
+        - BASE_IMAGE=${REG}/java:${TAG}
+        - BUILDER_IMAGE=${REG}/installer:${TAG}
+        - ADMIN_PASSWORD
+        - EMPOWER_USERNAME
+        - EMPOWER_PASSWORD
+        - RELEASE
+        - PRODUCTS=Broker
+        - FIXES
+    depends_on:
+      - java
+      - installer
+
+  # Database Component Configurator
+  dcc:
+    image: ${REG}/dcc:${TAG}
+    build:
+      context: dcc/
+      args:
+        - BASE_IMAGE=${REG}/java:${TAG}
+        - BUILDER_IMAGE=${REG}/installer:${TAG}
+        - ADMIN_PASSWORD
+        - EMPOWER_USERNAME
+        - EMPOWER_PASSWORD
+        - RELEASE
+        - PRODUCTS=DatabaseComponentConfigurator,MWScdc,PIEcdc,WMNcdc,WPEcdc
+        - FIXES
+    depends_on:
+      - java
+      - installer
+
+  # Microservices Runtime
+  msr:
+    image: ${REG}/msr:${TAG}
+    build:
+      context: msr/
+      args:
+        - BASE_IMAGE=${REG}/java:${TAG}
+        - BUILDER_IMAGE=${REG}/installer:${TAG}
+        - ADMIN_PASSWORD
+        - EMPOWER_USERNAME
+        - EMPOWER_PASSWORD
+        - RELEASE
+        - PRODUCTS=MSC,PIEContainerExternalRDBMS,jdbcAdapter,kafka,Monitor,wst
+        - FIXES
+    depends_on:
+      - java
+      - installer
+
+  # My webMethods Server
+  mws:
+    image: ${REG}/mws:${TAG}
+    build:
+      context: mws/
+      args:
+        - BASE_IMAGE=${REG}/java:${TAG}
+        - BUILDER_IMAGE=${REG}/installer:${TAG}
+        - ADMIN_PASSWORD
+        - EMPOWER_USERNAME
+        - EMPOWER_PASSWORD
+        - RELEASE
+        - PRODUCTS=MwsProgramFiles,Messaging,monitorUI
+        - FIXES
+    depends_on:
+      - java
+      - installer
