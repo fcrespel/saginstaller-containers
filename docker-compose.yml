@@ -123,3 +123,21 @@ services:
     depends_on:
       - java
       - installer
+
+  # Universal Messaging
+  um:
+    image: ${REG}/um:${TAG}
+    build:
+      context: um/
+      args:
+        - BASE_IMAGE=${REG}/java:${TAG}
+        - BUILDER_IMAGE=${REG}/installer:${TAG}
+        - ADMIN_PASSWORD
+        - EMPOWER_USERNAME
+        - EMPOWER_PASSWORD
+        - RELEASE
+        - PRODUCTS=NUMRealmServer
+        - FIXES
+    depends_on:
+      - java
+      - installer

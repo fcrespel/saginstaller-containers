@@ -6,6 +6,7 @@ This repository contains templates to build containers for some **SoftwareAG web
 - Database Component Configurator
 - Microservices Runtime
 - My webMethods Server
+- Universal Messaging
 
 It uses the **SoftwareAG installer** to create custom images with some additional features, that aim to be **production-ready** as much as possible. At this time, they have only been tested with the webMethods 10.15 release.
 
@@ -33,6 +34,7 @@ Then execute `docker compose build` to build the following images:
 - `dcc`: Database Component Configurator
 - `msr`: Microservices Runtime (with CloudStreams, JDBC/Kafka Adapters and Monitor)
 - `mws`: My webMethods Server
+- `um`: Universal Messaging
 
 Each directory contains a `Dockerfile` using multi-stage build to provision the product using the `installer` image, then copy the installation directory on top of the `java` image. The latest fixes are applied by default. The `target/entrypoint.sh` script starts the main product runtime.
 
