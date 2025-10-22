@@ -7,15 +7,15 @@ ARG OS_IMAGE="registry.access.redhat.com/ubi9/ubi"
 FROM $OS_IMAGE
 
 # Build arguments
-ARG SAG_INSTALLER_URL="https://delivery04.dhe.ibm.com/sar/CMA/OSA/0cx80/1/IBM_webMethods_Install_Linux_x64.bin"
+ARG INSTALLER_URL="https://delivery04.dhe.ibm.com/sar/CMA/OSA/0cx80/1/IBM_webMethods_Install_Linux_x64.bin"
 
 # Install packages
 RUN yum -y install procps-ng && \
     yum clean all
 
 # Set environment variables
-ENV SAG_HOME=/opt/softwareag/ \
-    SAG_INSTALLER_DIR=/opt/saginstall \
+ENV INSTALLER_DIR=/opt/installer \
+    SAG_HOME=/opt/softwareag/ \
     SAG_JAVA_OPTIONS=-DociInstallation=true \
     JAVA_HOME=/opt/softwareag/jvm/jvm/ \
     JRE_HOME=/opt/softwareag/jvm/jvm/
@@ -25,19 +25,19 @@ RUN groupadd -g 1724 sagadmin && \
     useradd -u 1724 -m -g 1724 -d $SAG_HOME -c "SoftwareAG Admin" sagadmin
 
 # Download installer
-RUN mkdir -p "$SAG_INSTALLER_DIR" && \
-    curl -sSLf -o $SAG_INSTALLER_DIR/saginstaller.bin "$SAG_INSTALLER_URL" && \
-    chmod +x $SAG_INSTALLER_DIR/saginstaller.bin && \
-    chown -R 1724:1724 "$SAG_INSTALLER_DIR"
+RUN mkdir -p "$INSTALLER_DIR" && \
+    curl -sSLf -o $INSTALLER_DIR/installer.bin "$INSTALLER_URL" && \
+    chmod +x $INSTALLER_DIR/installer.bin && \
+    chown -R 1724:1724 "$INSTALLER_DIR"
 
 # Copy files
-COPY --chown=1724:1724 target/ $SAG_INSTALLER_DIR/
+COPY --chown=1724:1724 target/ $INSTALLER_DIR/
 
 # Switch to user
 USER 1724
 
 # Switch to installer dir
-WORKDIR $SAG_INSTALLER_DIR
+WORKDIR $INSTALLER_DIR
 
 # Add arguments and files when using this image for build
 ONBUILD ARG ADMIN_PASSWORD="manage"

@@ -12,7 +12,7 @@ FIXES_LIST="${FIXES//:/\\:}"
 RELEASE_VERSION="${RELEASE//./}"
 
 # Build install script
-cat - <<EOF > $SAG_INSTALLER_DIR/install.script
+cat - <<EOF > $INSTALLER_DIR/install.script
 adminPassword=${ADMIN_PASSWORD}
 InstallDir=${SAG_HOME}
 InstallProducts=${PRODUCTS_LIST}
@@ -24,4 +24,4 @@ Username=${INSTALLER_USERNAME}
 EOF
 
 # Run installer
-$SAG_INSTALLER_DIR/saginstaller.bin -console -readScript $SAG_INSTALLER_DIR/install.script -scriptErrorInteract no -debugLvl info -debugOut
+$INSTALLER_DIR/installer.bin -console -readScript $INSTALLER_DIR/install.script -scriptErrorInteract no -debugLvl info -debugOut
