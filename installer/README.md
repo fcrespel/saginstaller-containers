@@ -20,10 +20,10 @@ The following arguments can be used when using this image as a base image (onbui
 | ADMIN_PASSWORD | Administrator password | manage |
 | INSTALLER_USERNAME | Installer username | |
 | INSTALLER_PASSWORD | Installer password | |
-| RELEASE | webMethods release | 10.15 |
+| RELEASE | webMethods release | 11.1 |
 | PRODUCTS | webMethods products to install | |
 | FIXES | webMethods fixes to install | spro:all |
 
 ## Useful links
 
-- [Installer 10.15 documentation](https://www.ibm.com/docs/en/webmethods-integration/webmethods-installer/10.15.0)
+- [Installer 11.1 documentation](https://www.ibm.com/docs/en/webmethods-integration/webmethods-installer/11.1.0)

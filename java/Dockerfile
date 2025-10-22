@@ -1,8 +1,8 @@
 ### Java image for all webMethods products
 
 # Build arguments
-ARG BUILDER_IMAGE="wm/installer:10.15"
-ARG BASE_IMAGE="wm/base:10.15"
+ARG BUILDER_IMAGE="wm/installer:11.1"
+ARG BASE_IMAGE="wm/base:11.1"
 
 # Builder image
 FROM $BUILDER_IMAGE AS builder

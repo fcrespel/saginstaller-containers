@@ -44,15 +44,15 @@ The following arguments can be used when building the container image.
 
 | Argument | Description | Default value |
 | -------- | ----------- | ------------- |
-| BASE_IMAGE | Base image | wm/java:10.15 |
-| BUILDER_IMAGE | Builder image | wm/installer:10.15 |
+| BASE_IMAGE | Base image | wm/java:11.1 |
+| BUILDER_IMAGE | Builder image | wm/installer:11.1 |
 | ADMIN_PASSWORD | Administrator password | manage |
 | INSTALLER_USERNAME | Installer username | |
 | INSTALLER_PASSWORD | Installer password | |
-| RELEASE | webMethods release | 10.15 |
+| RELEASE | webMethods release | 11.1 |
 | PRODUCTS | webMethods products to install | MwsProgramFiles |
 | FIXES | webMethods fixes to install | spro:all |
 
 ## Useful links
 
-- [My webMethods Server 10.15 documentation](https://www.ibm.com/docs/en/webmethods-integration/wm-my-webmethods-server/10.15.0)
+- [My webMethods Server 11.1 documentation](https://www.ibm.com/docs/en/webmethods-integration/wm-my-webmethods-server/11.1.0)

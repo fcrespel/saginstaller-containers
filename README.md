@@ -1,6 +1,6 @@
-# IBM webMethods containers (using installer)
+# IBM webMethods containers
 
-This repository contains templates to build containers for some **IBM webMethods** products:
+This repository contains templates to build custom containers for some **IBM webMethods** products:
 - Asset Build Environment
 - Broker
 - Database Component Configurator
@@ -8,7 +8,7 @@ This repository contains templates to build containers for some **IBM webMethods
 - My webMethods Server
 - Universal Messaging
 
-It uses the **IBM webMethods installer** to create custom images with some additional features, that aim to be **production-ready** as much as possible. At this time, they have only been tested with the webMethods 10.15 release.
+It uses the **IBM webMethods installer** to create custom images with some additional features, that aim to be **production-ready** as much as possible. At this time, they have only been tested with the webMethods 10.15 and 11.1 releases.
 
 These tools are provided as-is and without warranty or support. They do not constitute part of the IBM webMethods product suite, and are not endorsed by IBM. Users are free to use, fork and modify them, subject to the license agreement. For official containers, see https://containers.webmethods.io.
 
@@ -34,7 +34,7 @@ Then execute `docker compose build` to build the following images:
 - `mws`: My webMethods Server
 - `um`: Universal Messaging
 
-Each directory contains a `Dockerfile` using multi-stage build to provision the product using the `installer` image, then copy the installation directory on top of the `java` image. The latest fixes are applied by default. The `target/entrypoint.sh` script starts the main product runtime.
+Each directory contains a `Dockerfile` using multi-stage build to provision the product using the `installer` image, then copy the installation directory on top of the `java` image. The latest fixes are applied by default. When present, the `target/entrypoint.sh` script starts the main product runtime.
 
 Please refer to each `README.md` file for more details about ports, environment variables, volumes and useful links.
 

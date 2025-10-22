@@ -1,8 +1,8 @@
 ### My webMethods Server image
 
 # Arguments
-ARG BUILDER_IMAGE="wm/installer:10.15"
-ARG BASE_IMAGE="wm/java:10.15"
+ARG BUILDER_IMAGE="wm/installer:11.1"
+ARG BASE_IMAGE="wm/java:11.1"
 
 # Builder image
 FROM $BUILDER_IMAGE AS builder
