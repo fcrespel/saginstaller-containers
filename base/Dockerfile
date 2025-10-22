@@ -1,7 +1,7 @@
 ### Base image for all webMethods products
 
 # Build arguments
-ARG OS_IMAGE="registry.access.redhat.com/ubi8/ubi"
+ARG OS_IMAGE="registry.access.redhat.com/ubi9/ubi"
 
 # Target image
 FROM $OS_IMAGE
@@ -11,13 +11,13 @@ RUN yum -y update && \
     yum clean all
 
 # Install packages
-RUN yum -y install file gettext hostname initscripts iproute jq less libxslt net-tools procps-ng rsync unzip which && \
+RUN yum -y install coreutils-common file gettext hostname initscripts iproute iputils jq less libxslt net-tools openssl procps-ng rsync unzip which && \
     yum clean all
 
 # Set environment variables
 ENV SAG_HOME=/opt/softwareag \
     WM_HOME=/opt/softwareag \
-    LANG=en_US.utf8
+    LANG=C.utf8
 
 # Create user and group
 RUN groupadd -g 1724 sagadmin && \

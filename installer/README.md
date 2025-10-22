@@ -10,7 +10,7 @@ The following arguments can be used when building the container image.
 
 | Argument | Description | Default value |
 | -------- | ----------- | ------------- |
-| OS_IMAGE | Base OS image | registry.access.redhat.com/ubi8/ubi |
+| OS_IMAGE | Base OS image | registry.access.redhat.com/ubi9/ubi |
 | SAG_INSTALLER_URL | Installer URL | https://delivery04.dhe.ibm.com/sar/CMA/OSA/0cx80/1/IBM_webMethods_Install_Linux_x64.bin |
 
 The following arguments can be used when using this image as a base image (onbuild).

@@ -10,4 +10,4 @@ The following arguments can be used when building the container image.
 
 | Argument | Description | Default value |
 | -------- | ----------- | ------------- |
-| OS_IMAGE | Base OS image | registry.access.redhat.com/ubi8/ubi |
+| OS_IMAGE | Base OS image | registry.access.redhat.com/ubi9/ubi |

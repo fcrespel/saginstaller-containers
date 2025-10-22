@@ -25,7 +25,7 @@ Edit the `.env` file to adjust the webMethods release version and fill in your I
 Then execute `docker compose build` to build the following images:
 
 - `installer`: this image includes the webMethods Installer in `/opt/saginstaller`, and is used to build product-specific images.
-- `base`: a simple RedHat UBI 8 base layer with the `/opt/softwareag` install directory and `sagadmin` system user.
+- `base`: a simple RedHat UBI 9 base layer with the `/opt/softwareag` install directory and `sagadmin` system user.
 - `java`: an image with the JVM provided with webMethods products, built on top of the `base` image. This image is used to share the JVM layer between subsequent product images.
 - `abe`: Asset Build Environment
 - `broker`: Broker Server

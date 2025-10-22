@@ -1,7 +1,7 @@
 ### Installer image for all webMethods products
 
 # Build arguments
-ARG OS_IMAGE="registry.access.redhat.com/ubi8/ubi"
+ARG OS_IMAGE="registry.access.redhat.com/ubi9/ubi"
 
 # Builder image
 FROM $OS_IMAGE
