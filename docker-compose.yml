@@ -99,7 +99,7 @@ services:
         - INSTALLER_USERNAME
         - INSTALLER_PASSWORD
         - RELEASE
-        - PRODUCTS=MSC,PIEContainerExternalRDBMS,jdbcAdapter,kafka,Monitor,wst
+        - PRODUCTS=MSC,MWSCentralUserManagement,PIEContainerExternalRDBMS,PIEStreaming,PIEWpm,jdbcAdapter,kafka,Monitor,wst
         - FIXES
     depends_on:
       - java

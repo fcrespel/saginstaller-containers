@@ -30,7 +30,7 @@ Then execute `docker compose build` to build the following images:
 - `abe`: Asset Build Environment
 - `broker`: Broker Server
 - `dcc`: Database Component Configurator
-- `msr`: Microservices Runtime (with CloudStreams, JDBC/Kafka Adapters and Monitor)
+- `msr`: Microservices Runtime (with CloudStreams, Common Directory Services, JDBC/Kafka Adapters, Monitor, Streaming and WPM)
 - `mws`: My webMethods Server
 - `um`: Universal Messaging
 
