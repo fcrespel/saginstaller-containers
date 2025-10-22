@@ -14,15 +14,15 @@ The following arguments can be used when building the container image.
 
 | Argument | Description | Default value |
 | -------- | ----------- | ------------- |
-| BASE_IMAGE | Base image | sag/java:10.15 |
-| BUILDER_IMAGE | Builder image | sag/installer:10.15 |
+| BASE_IMAGE | Base image | wm/java:10.15 |
+| BUILDER_IMAGE | Builder image | wm/installer:10.15 |
 | ADMIN_PASSWORD | Administrator password | manage |
-| EMPOWER_USERNAME | Empower username | |
-| EMPOWER_PASSWORD | Empower password | |
+| INSTALLER_USERNAME | Installer username | |
+| INSTALLER_PASSWORD | Installer password | |
 | RELEASE | webMethods release | 10.15 |
 | PRODUCTS | webMethods products to install | acdl |
 | FIXES | webMethods fixes to install | spro:all |
 
 ## Useful links
 
-- [Deployer 10.15 documentation](https://documentation.softwareag.com/webmethods/deployer/wdy10-15/webhelp/wdy-webhelp/)
+- [Deployer 10.15 documentation](https://www.ibm.com/docs/en/webmethods-integration/webmethods-deployer/10.15.0)

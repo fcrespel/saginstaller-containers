@@ -17,10 +17,10 @@ adminPassword=${ADMIN_PASSWORD}
 InstallDir=${SAG_HOME}
 InstallProducts=${PRODUCTS_LIST}
 LicenseAgree=Accept
-Password=${EMPOWER_PASSWORD}
+Password=${INSTALLER_PASSWORD}
 selectedFixes=${FIXES_LIST}
-ServerURL=https\://sdc-hq.softwareag.com/cgi-bin/dataservewebM${RELEASE_VERSION}.cgi
-Username=${EMPOWER_USERNAME}
+ServerURL=https\://sdc.webmethods.io/cgi-bin/dataservewebM${RELEASE_VERSION}.cgi
+Username=${INSTALLER_USERNAME}
 EOF
 
 # Run installer

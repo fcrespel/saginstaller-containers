@@ -1,8 +1,8 @@
-### Java image for all Software AG products
+### Java image for all webMethods products
 
 # Build arguments
-ARG BUILDER_IMAGE="sag/installer:10.15"
-ARG BASE_IMAGE="sag/base:10.15"
+ARG BUILDER_IMAGE="wm/installer:10.15"
+ARG BASE_IMAGE="wm/base:10.15"
 
 # Builder image
 FROM $BUILDER_IMAGE AS builder

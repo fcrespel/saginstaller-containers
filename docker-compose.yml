@@ -7,14 +7,13 @@ services:
       args:
         - OS_IMAGE
 
-  # Software AG Installer
+  # Installer image
   installer:
     image: ${REG}/installer:${TAG}
     build:
       context: installer/
       args:
         - OS_IMAGE
-        - SAG_INSTALLER_URL
 
   # Java image
   java:
@@ -25,8 +24,8 @@ services:
         - BASE_IMAGE=${REG}/base:${TAG}
         - BUILDER_IMAGE=${REG}/installer:${TAG}
         - ADMIN_PASSWORD
-        - EMPOWER_USERNAME
-        - EMPOWER_PASSWORD
+        - INSTALLER_USERNAME
+        - INSTALLER_PASSWORD
         - RELEASE
         - PRODUCTS=sjp
         - FIXES
@@ -43,8 +42,8 @@ services:
         - BASE_IMAGE=${REG}/java:${TAG}
         - BUILDER_IMAGE=${REG}/installer:${TAG}
         - ADMIN_PASSWORD
-        - EMPOWER_USERNAME
-        - EMPOWER_PASSWORD
+        - INSTALLER_USERNAME
+        - INSTALLER_PASSWORD
         - RELEASE
         - PRODUCTS=acdl
         - FIXES
@@ -61,8 +60,8 @@ services:
         - BASE_IMAGE=${REG}/java:${TAG}
         - BUILDER_IMAGE=${REG}/installer:${TAG}
         - ADMIN_PASSWORD
-        - EMPOWER_USERNAME
-        - EMPOWER_PASSWORD
+        - INSTALLER_USERNAME
+        - INSTALLER_PASSWORD
         - RELEASE
         - PRODUCTS=Broker
         - FIXES
@@ -79,8 +78,8 @@ services:
         - BASE_IMAGE=${REG}/java:${TAG}
         - BUILDER_IMAGE=${REG}/installer:${TAG}
         - ADMIN_PASSWORD
-        - EMPOWER_USERNAME
-        - EMPOWER_PASSWORD
+        - INSTALLER_USERNAME
+        - INSTALLER_PASSWORD
         - RELEASE
         - PRODUCTS=DatabaseComponentConfigurator,MWScdc,PIEcdc,WMNcdc,WPEcdc
         - FIXES
@@ -97,8 +96,8 @@ services:
         - BASE_IMAGE=${REG}/java:${TAG}
         - BUILDER_IMAGE=${REG}/installer:${TAG}
         - ADMIN_PASSWORD
-        - EMPOWER_USERNAME
-        - EMPOWER_PASSWORD
+        - INSTALLER_USERNAME
+        - INSTALLER_PASSWORD
         - RELEASE
         - PRODUCTS=MSC,PIEContainerExternalRDBMS,jdbcAdapter,kafka,Monitor,wst
         - FIXES
@@ -115,8 +114,8 @@ services:
         - BASE_IMAGE=${REG}/java:${TAG}
         - BUILDER_IMAGE=${REG}/installer:${TAG}
         - ADMIN_PASSWORD
-        - EMPOWER_USERNAME
-        - EMPOWER_PASSWORD
+        - INSTALLER_USERNAME
+        - INSTALLER_PASSWORD
         - RELEASE
         - PRODUCTS=MwsProgramFiles,Messaging,monitorUI
         - FIXES
@@ -133,8 +132,8 @@ services:
         - BASE_IMAGE=${REG}/java:${TAG}
         - BUILDER_IMAGE=${REG}/installer:${TAG}
         - ADMIN_PASSWORD
-        - EMPOWER_USERNAME
-        - EMPOWER_PASSWORD
+        - INSTALLER_USERNAME
+        - INSTALLER_PASSWORD
         - RELEASE
         - PRODUCTS=NUMRealmServer
         - FIXES

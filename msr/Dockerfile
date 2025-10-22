@@ -1,8 +1,8 @@
 ### Microservices Runtime image
 
 # Arguments
-ARG BUILDER_IMAGE="sag/installer:10.15"
-ARG BASE_IMAGE="sag/java:10.15"
+ARG BUILDER_IMAGE="wm/installer:10.15"
+ARG BASE_IMAGE="wm/java:10.15"
 
 # Builder image
 FROM $BUILDER_IMAGE AS builder

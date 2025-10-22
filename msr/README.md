@@ -55,15 +55,15 @@ The following arguments can be used when building the container image.
 
 | Argument | Description | Default value |
 | -------- | ----------- | ------------- |
-| BASE_IMAGE | Base image | sag/java:10.15 |
-| BUILDER_IMAGE | Builder image | sag/installer:10.15 |
+| BASE_IMAGE | Base image | wm/java:10.15 |
+| BUILDER_IMAGE | Builder image | wm/installer:10.15 |
 | ADMIN_PASSWORD | Administrator password | manage |
-| EMPOWER_USERNAME | Empower username | |
-| EMPOWER_PASSWORD | Empower password | |
+| INSTALLER_USERNAME | Installer username | |
+| INSTALLER_PASSWORD | Installer password | |
 | RELEASE | webMethods release | 10.15 |
 | PRODUCTS | webMethods products to install | MSC |
 | FIXES | webMethods fixes to install | spro:all |
 
 ## Useful links
 
-- [Microservices Runtime 10.15 documentation](https://documentation.softwareag.com/webmethods/integration_server/pie10-15/webhelp/pie-webhelp/)
+- [Microservices Runtime 10.15 documentation](https://www.ibm.com/docs/en/webmethods-integration/wm-microservices-runtime/10.15.0)

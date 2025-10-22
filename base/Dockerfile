@@ -1,4 +1,4 @@
-### Base image for all Software AG products
+### Base image for all webMethods products
 
 # Build arguments
 ARG OS_IMAGE="registry.access.redhat.com/ubi8/ubi"

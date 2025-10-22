@@ -1,4 +1,4 @@
-### Software AG installer image
+### Installer image for all webMethods products
 
 # Build arguments
 ARG OS_IMAGE="registry.access.redhat.com/ubi8/ubi"
@@ -7,7 +7,7 @@ ARG OS_IMAGE="registry.access.redhat.com/ubi8/ubi"
 FROM $OS_IMAGE
 
 # Build arguments
-ARG SAG_INSTALLER_URL="https://empowersdc.softwareag.com/ccinstallers/SoftwareAGInstaller20231017-Linux_x86_64.bin"
+ARG SAG_INSTALLER_URL="https://delivery04.dhe.ibm.com/sar/CMA/OSA/0cx80/1/IBM_webMethods_Install_Linux_x64.bin"
 
 # Install packages
 RUN yum -y install procps-ng && \
@@ -41,8 +41,8 @@ WORKDIR $SAG_INSTALLER_DIR
 
 # Add arguments and files when using this image for build
 ONBUILD ARG ADMIN_PASSWORD="manage"
-ONBUILD ARG EMPOWER_USERNAME=""
-ONBUILD ARG EMPOWER_PASSWORD=""
+ONBUILD ARG INSTALLER_USERNAME=""
+ONBUILD ARG INSTALLER_PASSWORD=""
 ONBUILD ARG RELEASE="10.15"
 ONBUILD ARG PRODUCTS=""
 ONBUILD ARG FIXES="spro:all"
