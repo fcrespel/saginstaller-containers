@@ -7,7 +7,7 @@ ARG OS_IMAGE="registry.access.redhat.com/ubi9/ubi"
 FROM $OS_IMAGE
 
 # Build arguments
-ARG INSTALLER_URL="https://delivery04.dhe.ibm.com/sar/CMA/OSA/0cx80/1/IBM_webMethods_Install_Linux_x64.bin"
+ARG INSTALLER_URL="https://delivery04.dhe.ibm.com/sar/CMA/OSA/0cx80/2/IBM_webMethods_Install_Linux_x64.bin"
 
 # Install packages
 RUN yum -y install procps-ng && \
